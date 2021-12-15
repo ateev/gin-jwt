@@ -2,7 +2,6 @@ package jwt
 
 import (
 	"errors"
-	"fmt"
 	"net/http"
 	"strings"
 	"time"
@@ -169,7 +168,6 @@ func (mw *GinJWTMiddleware) MiddlewareInit() error {
 	if mw.IdentityHandler == nil {
 		mw.IdentityHandler = func(claims jwt.MapClaims) int {
 			id := int(claims["id"].(float64))
-			fmt.Println(claims["id"])
 			return id
 		}
 	}
