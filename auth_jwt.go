@@ -268,10 +268,6 @@ func (mw *GinJWTMiddleware) LoginHandler(c *gin.Context) {
 	// 	}
 	// }
 
-	if userID == 0 {
-		userID = 0
-	}
-
 	expire := mw.TimeFunc().Add(mw.Timeout)
 	claims["id"] = userID
 	claims["role"] = role
